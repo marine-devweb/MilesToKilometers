@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="fr">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -9,6 +9,24 @@
     <title>Convertisseur de Miles en Kilomètres</title>
 </head>
 <body>
-    <h1 class="text-center">Convertisseur de Miles en Kilomètres</h1>
+    <div class="container">
+        <h1 class="text-center">Convertisseur de Miles en Kilomètres</h1>
+        <label for="miles">Distance en Miles :</label>
+        <input type="number" id="miles" placeholder="Entrez une distance en miles">
+        <button onclick="convert()">Convertir</button>
+        <p id="result"></p>
+    </div>
+
+    <script>
+        function convert() {
+            let milesInput = document.getElementById("miles");
+            let result = document.getElementById("result");
+
+            let miles = parseFloat(milesInput.value);
+            let kilometres = miles * 1.60934;
+
+            result.innerHTML = miles + " Miles équivaut à " + kilometres + " Kilomètres.";
+        }
+    </script>
 </body>
 </html>
